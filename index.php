@@ -10,7 +10,6 @@ require __DIR__ ."/src/model/words.json";
 
 $listWord = json_decode(file_get_contents(__DIR__ ."/src/model/words.json"), true);
 $word = $listWord[array_rand($listWord)];
-var_dump($word);
 
 $motus = new  GameMotus($word);
 

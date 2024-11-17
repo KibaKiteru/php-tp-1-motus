@@ -5,11 +5,9 @@ require __DIR__ . "/vendor/autoload.php";
 
 require __DIR__ ."/src/model/BO/gameMotus.php";
 
-require __DIR__ ."/src/model/words.json";
-
-
 $listWord = json_decode(file_get_contents(__DIR__ ."/src/model/words.json"), true);
 $word = $listWord[array_rand($listWord)];
+
 
 $motus = new  GameMotus($word);
 
@@ -27,7 +25,8 @@ while (true) {
 
 
 
-    echo "MOTUS GAME \r\n ". "try :".$try."/10\r\n\r\n\r\n";
+    echo "MOTUS GAME \r\n   ". "try :".$try."/10\r\n\r\n\r\n";
+    echo"letters : ".strlen($word)."\r\n\r\n\r\n";
     
     $motus->displayWord();
 

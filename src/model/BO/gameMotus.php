@@ -65,13 +65,13 @@ class GameMotus {
 
     public function checkWordCorrespondence(string $inputWord): void
     {
-        $result = "";
         $arrayInput = str_split($inputWord);
-        for($i= 1; $i<count($arrayInput); $i++)
+        for($i = 1; $i < count($this->hidingWord); $i++)
         {
             if($this->wordSplit[$i] == $arrayInput[$i])
             {
                 $this->hidingWord[$i] = $arrayInput[$i];
+
             }
         }
         //array_push($this->listeTentative, $this->hidingWord);
@@ -105,7 +105,7 @@ class GameMotus {
 
     public function clear(): void
     {
-        echo chr(27).chr(91).'H'.chr(27).chr(91).'J';
+        echo chr(27)."[H".chr(27)."[2J";
     }
 
 
